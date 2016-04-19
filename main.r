@@ -1,0 +1,5 @@
+library(RUnit)
+c2f <- function(c) return(9/5 * c + 32)
+testsuite.c2f <- defineTestSuite("c2f", dirs = "tests",testFileRegexp = "^runit.+\\.r",testFuncRegexp = "^test.+",rngKind = "Marsaglia-Multicarry",rngNormalKind = "Kinderman-Ramage")
+testResult <- runTestSuite(testsuite.c2f)
+printHTMLProtocol(testResult, fileName = "RUnit-results.html")
